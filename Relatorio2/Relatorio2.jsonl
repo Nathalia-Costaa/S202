@@ -1,0 +1,34 @@
+{
+    "Aulas": {
+        "Aula1": {
+            "Professor": "Jonas",
+            "Assunto": "NoSQL",
+            "Alunos": {
+                "Aluno1": "Sabrina",
+                "Aluno2": "Nathalia",
+                "Aluno3": "Marcos",
+                "Aluno4": "Miguel"
+            }
+        },
+        "Aula2": {
+            "Professor": "Marcelo",
+            "Assunto": "Paradigmas",
+            "Alunos": {
+                "Aluno1": "Carlos",
+                "Aluno2": "Joao",
+                "Aluno3": "Amanda",
+                "Aluno4": "Karen"
+            }
+        },
+        "Aula3": {
+            "Professor": "Felipe",
+            "Assunto": "Transistores",
+            "Alunos": {
+                "Aluno1": "Carlos",
+                "Aluno2": "Joao",
+                "Aluno3": "Amanda",
+                "Aluno4": "Karen"
+            }
+        }
+    }
+}
