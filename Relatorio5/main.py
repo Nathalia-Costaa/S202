@@ -14,18 +14,18 @@ while True:
 
     opcao = input()
 
-    if opcao == 1:
+    if opcao == "1":
         titulo = input("Insira o título do livro")
         autor = input("Insira o autor do livro")
         ano = int(input("Insira o ano do livro"))
         preco = float(input("Insira o preco do livro"))
 
         livroModel.create_book(titulo, autor, ano, preco)
-    elif opcao == 2:
+    elif opcao == "2":
         idLivro = input("Insira o id do livro")
 
         livroModel.read_book_by_id(idLivro)
-    elif opcao == 3:
+    elif opcao == "3":
         idLivro = input("Insira o id do livro")
         titulo = input("Insira o título do livro atualizado")
         autor = input("Insira o autor do livro atualizado")
@@ -33,7 +33,7 @@ while True:
         preco = float(input("Insira o preco do livro atualizado"))
 
         livroModel.update_book(idLivro, titulo, autor, ano, preco)
-    elif opcao == 4:
+    elif opcao == "4":
         idLivro = input("Insira o id do livro")
 
         livroModel.delete_book(idLivro)
