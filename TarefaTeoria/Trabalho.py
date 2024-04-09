@@ -3,7 +3,7 @@ from neo4j.exceptions import ServiceUnavailable
 
 def consultar_parentes_homens(tx):
     query = """
-        MATCH (p:Pessoa:Parente {sexo: 'M'})
+        MATCH (p:Pessoa:Pessoa {sexo: 'M'})
         RETURN COUNT(p) AS quantidade
     """
     result = tx.run(query)
@@ -21,8 +21,8 @@ def consultar_irmaos(tx):
 # Função para consultar o número de parentes com mais de 25 anos
 def consultar_parentes_mais_de_25_anos(tx):
     query = """
-        MATCH (p:Pessoa:Parente)
-        WHERE p.idade > 25
+        MATCH (p:Pessoa)
+        WHERE (p:ParentesProximos OR p:Parentes) AND p.idade > 25
         RETURN COUNT(p) AS quantidade
     """
     result = tx.run(query)
@@ -137,7 +137,7 @@ quantidade_no = int(input('Entre com a quantidade de nós desejados: '))
 quantidade_parentes_proximos = int(input('Entre com a quantidade de parentes proximos: '))
 
 # Verifica se a quantidade mínima de nós é atingida
-if quantidade_no < 10:
+if quantidade_no < 2:
     print("A quantidade mínima de nós é 10. Por favor, insira um número igual ou maior que 10.")
 else:
     for y in range(quantidade_parentes_proximos):
