@@ -36,14 +36,12 @@ class motoristaCLI(SimpleCLI):
     def read_motorista(self):
         id = input("Enter the id: ")
         motorista = self.motorista_model.read_motorista_by_id(id)
-        if motorista:
-            print(f"Name: {motorista['name']}")
-            print(f"Age: {motorista['age']}")
+
 
     def update_motorista(self):
         id = input("Enter the id: ")
         name = input("Enter the new name: ")
-        age = int(input("Enter the new age: "))
+        age = int(input("Enter the new : "))
         self.motorista_model.update_motorista(id, name, age)
 
     def delete_motorista(self):

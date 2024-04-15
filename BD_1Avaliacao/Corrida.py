@@ -6,4 +6,4 @@ class Corrida:
         self.nota_corrida = nota
         self.distancia = distancia
         self.valor = valor
-        self.passageiro = Passageiro
+        self.passageiro = passageiro
