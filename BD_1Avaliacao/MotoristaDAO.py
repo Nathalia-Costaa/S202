@@ -8,10 +8,23 @@ class MotoristaDAO:
     def __init__(self, database):
         self.db = database
 
-    def create_motorista_DAO(self, motorista: Motorista):
+    def create_motorista_DAO(self, motorista: Motorista, quant):
         try:
-            res = self.db.collection.insert_one({"motorista": motorista})
-            print(f"Person created with id: {res.inserted_id}")
+            motorista_doc = {
+                "nota_motorista": int(motorista.nota_motorista),
+                "corridas": [{
+                    "nota": int(corrida.nota_corrida),
+                    "distancia": float(corrida.distancia),
+                    "valor": float(corrida.valor),
+                    "passageiro": {
+                        "nome": corrida.passageiro.nome,
+                        "documento": corrida.passageiro.documento
+                    }
+                } for corrida in motorista.corrida]
+            }
+
+            res = self.db.collection.insert_one(motorista_doc)
+            print(f"Motorista created with id: {res.inserted_id}")
             return res.inserted_id
         except Exception as e:
             print(f"An error occurred while creating person: {e}")

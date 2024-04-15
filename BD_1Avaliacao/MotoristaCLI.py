@@ -27,9 +27,11 @@ class motoristaCLI(SimpleCLI):
 
             lista_corridas.append(corrida)
 
-        motorista = Motorista(int(input("Entre com a nota do motorista: ")), lista_corridas)
+        nota_motorista = int(input("Entre com a nota do motorista: "))
 
-        self.motorista_model.create_motorista_DAO(motorista)
+        motorista = Motorista(nota_motorista, lista_corridas)
+
+        self.motorista_model.create_motorista_DAO(motorista, quant)
 
     def read_motorista(self):
         id = input("Enter the id: ")

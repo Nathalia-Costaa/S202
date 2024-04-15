@@ -1,0 +1,35 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'nota_motorista',
+      'nota_corrida',
+      'distancia',
+      'valor',
+      'nome_passageiro',
+      'documento'
+    ],
+    properties: {
+      nota_motorista: {
+        bsonType: 'int',
+        description: 'deve ser um inteiro'
+      },
+      nota_corrida: {
+        bsonType: 'int',
+        description: 'deve ser um inteiro'
+      },
+      distancia: {
+        bsonType: 'float',
+        description: 'deve ser um float'
+      },
+      nome_passageiro: {
+        bsonType: 'string',
+        description: 'deve ser uma string'
+      },
+      documento: {
+        bsonType: 'string',
+        description: 'deve ser uma string'
+      }
+    }
+  }
+}
