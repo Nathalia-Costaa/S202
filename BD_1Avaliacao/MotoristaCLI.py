@@ -7,7 +7,7 @@ class motoristaCLI(SimpleCLI):
     def __init__(self, motorista_model):
         super().__init__()
         self.motorista_model = motorista_model
-        self.add_command("create", self.create_motorista())
+        self.add_command("create", self.create_motorista)
         self.add_command("read", self.read_motorista)
         self.add_command("update", self.update_motorista)
         self.add_command("delete", self.delete_motorista)
@@ -16,8 +16,8 @@ class motoristaCLI(SimpleCLI):
         lista_corridas = []
         quant = int(input("Entre com a quantidade de corridas:"))
         for x in range(quant):
-            nome_passageiro = input("Entre com o nome do passageiro: ")
-            documento = input("Entre com o documento do passageiro")
+            nome_passageiro = str(input("Entre com o nome do passageiro: "))
+            documento = str(input("Entre com o documento do passageiro"))
             passageiro = Passageiro(nome_passageiro, documento)
 
             nota_corrida = int(input("Entre com a nota da corrida: "))
@@ -41,10 +41,10 @@ class motoristaCLI(SimpleCLI):
     def update_motorista(self):
         id = input("Enter the id: ")
         lista_corridas = []
-        quant = int(input("Entre com a quantidade de corridas:"))
+        quant = int(input("Entre com a quantidade de corridas: "))
         for x in range(quant):
             nome_passageiro = input("Entre com o nome do passageiro: ")
-            documento = input("Entre com o documento do passageiro")
+            documento = input("Entre com o documento do passageiro: ")
             passageiro = Passageiro(nome_passageiro, documento)
 
             nota_corrida = int(input("Entre com a nota da corrida: "))
