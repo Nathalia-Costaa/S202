@@ -1,3 +1,5 @@
+import database
+import query_py
 from database import Database
 from teacher_crud import TeacherDatabase
 
@@ -19,6 +21,8 @@ print("-------------------------------------------------------------------------
 
 print("Atualiazando cpf Chris Lima: ")
 print(teacher_db.update_professor("Chris Lima", "162.052.777-77"))
+
+print("------------------------------------------------------------------------------------")
 
 # Fechando a conexão com o banco de dados
 db.close()
