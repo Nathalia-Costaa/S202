@@ -1,7 +1,7 @@
 from database import Database
 from teacher_crud import TeacherDatabase
 
-# cria uma instância da classe Database, passando os dados de conexão com o banco de dados Neo4j
+# Cria uma instância da classe Database, passando os dados de conexão com o banco de dados Neo4j
 db = Database("neo4j+s://fc39d5cf.databases.neo4j.io", "neo4j", "aAimDknf3beishTTQrBCCJAvCoN_kxBCRFBvCZpGa1s")
 db.drop_all()
 

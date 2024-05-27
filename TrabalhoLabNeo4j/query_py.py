@@ -4,7 +4,7 @@ from neo4j.exceptions import ServiceUnavailable
 def procurar_renzo(tx):
     query = """
         MATCH (p:Teacher {name: 'Renzo'})
-        RETURN p.ano_nasc AS ano_nasc, p.CPF AS CPF
+        RETURN p.ano_nasc AS ano_nasc, p.cpf AS cpf
     """
     result = tx.run(query)
     return result.single()["infos_renzo"]
@@ -37,7 +37,16 @@ def procurar_escolas(tx):
     result = tx.run(query)
     return result.single()["escolas"]
 
-def procurar_ano_nasc(tx):
+def idade_professores(self):
+    query = """
+    MATCH (t:Teacher)
+    WITH MIN(t.ano_nasc) AS mais_jovem, MAX(t.ano_nasc) AS mais_velho
+    RETURN mais_jovem, mais_velho
+    """
+    result = self.db.execute_query(query)
+    return result
+
+def media_habitantes(tx):
     query = """
         MATCH (t:City)
         RETURN AVG(t.population) AS population
@@ -56,7 +65,8 @@ def procurar_cidade(tx):
 def procurar_caracter_nomes(tx):
     query = """
         MATCH (t:Teacher)
-        RETURN substring(c.nome, 2, 1) AS terceiro_caractere
+        RETURN substring(t.name, 2, 1) AS terceiro_caractere
     """
     result = tx.run(query)
     return result.single()["caracteres"]
+
