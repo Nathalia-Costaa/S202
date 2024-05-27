@@ -10,13 +10,15 @@ teacher_db = TeacherDatabase(db)
 
 teacher_db.create_professor("Chris Lima", 1956, "189.052.396-66")
 
-print("Informações: Chris Lima: \n")
+print("------------------------------------------------------------------------------------")
+
+print("Informações Chris Lima: ")
 print(teacher_db.get_professores("Chris Lima"))
 
-print("Atualiazando cpf: Chris Lima: \n")
-teacher_db.update_professor("Chris Lima", "189.052.396-66")
+print("------------------------------------------------------------------------------------")
 
-
+print("Atualiazando cpf Chris Lima: ")
+print(teacher_db.update_professor("Chris Lima", "162.052.777-77"))
 
 # Fechando a conexão com o banco de dados
 db.close()
