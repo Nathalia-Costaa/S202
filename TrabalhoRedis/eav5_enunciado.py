@@ -184,7 +184,17 @@ def test_questao_4():
 
 # Questão 5
 def questao_5(user_views, user_id):
-    pass
+    results = []
+
+    for user_view in user_views:
+        redis_conn.hset("vistos:" + user_view['user_id'], mapping={
+            "usuario": user_view['usuario'],
+            "viazualizado": user_view['visualizado']
+        })
+
+    redis_conn.lpush("post", "id", "product:2")
+
+    return results
 
 def test_questao_5():
 

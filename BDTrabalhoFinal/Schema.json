@@ -1,0 +1,85 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'nome',
+      'porcentagem_comissao',
+      'venda'
+    ],
+    properties: {
+      nome: {
+        bsonType: 'str',
+        description: 'Nome vendedor. Deve ser um string.'
+      },
+      properties: {
+      porcentagem_comissao: {
+        bsonType: 'int',
+        description: 'Pocentagem de comissao do vendedor. Deve ser um inteiro.'
+      },
+      vendas: {
+        bsonType: 'array',
+        description: 'Lista de vendas.',
+        items: {
+          bsonType: 'object',
+          required: [
+            'valor',
+            'forma_pagamento',
+            'nome_produto',
+            'data_compra',
+            'comprador'
+          ],
+          properties: {
+            valor: {
+              bsonType: 'float',
+              description: 'Valor da compra. Deve ser um float.'
+            },
+            forma_pagamento: {
+              bsonType: 'str',
+              description: 'Forma de pagamento. Deve ser um número de ponto string.'
+            },
+            nome_produto: {
+              bsonType: 'str',
+              description: 'Nome do produto comprado. Deve ser um número de ponto string.'
+            },
+            data_compra: {
+              bsonType: 'str',
+              description: 'Data da compra. Deve ser um número de ponto string.'
+            },
+            comprador: {
+              bsonType: 'object',
+              required: [
+                'nome',
+                'cpf'
+                'telefone',
+                'cidade',
+                'idade'
+              ],
+              properties: {
+                nome: {
+                  bsonType: 'string',
+                  description: 'Nome do comprador. Deve ser uma string.'
+                },
+                cpf: {
+                  bsonType: 'str',
+                  description: 'Cpf do comprador. Deve ser uma string.'
+                },
+                telefone: {
+                  bsonType: 'str',
+                  description: 'Telefone do comprador. Deve ser uma string.'
+                },
+                cidade: {
+                  bsonType: 'str',
+                  description: 'Cidade em que o comprador reside. Deve ser uma string.'
+                },
+                idade: {
+                  bsonType: 'int',
+                  description: 'Idade do comprador. Deve ser uma string.'
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
